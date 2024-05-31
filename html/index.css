@@ -1,0 +1,182 @@
+/* Reset some default browser styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    text-align: center;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Light mode colors */
+:root {
+    --background-color: #f0f2f5;
+    --text-color: #333;
+    --nav-background: #ffffff;
+    --nav-text-color: #333;
+    --button-background: #007bff;
+    --button-hover-background: #0056b3;
+    --section-background: #ffffff;
+}
+
+/* Dark mode colors */
+body.dark-mode {
+    --background-color: #1e1e1e;
+    --text-color: #f0f2f5;
+    --nav-background: #333;
+    --nav-text-color: #f0f2f5;
+    --button-background: #007bff;
+    --button-hover-background: #0056b3;
+    --section-background: #2c2c2c;
+}
+
+/* Style the navigation bar */
+.nav {
+    display: flex;
+    justify-content: right;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #121111;
+    padding: 1em 0;
+    z-index: 1000;
+    transition: background-color 0.3s;
+}
+
+.nav ul {
+    list-style-type: none;
+    color: #fff;
+    margin: 0; /* Added to reset default margin */
+    padding: 0; /* Added to reset default padding */
+    display: flex;
+    justify-content: center;
+}
+
+.nav li {
+    color: #fff;
+    margin: 0 0.5em; /* Adjusted to provide space between list items */
+}
+
+.nav a {
+    color: var(--nav-text-color);
+    text-decoration: none;
+    font-size: 1.2em;
+    transition: color 0.3s; /* Added transition for color change */
+}
+
+.nav a:hover {
+    text-decoration: underline;
+    color: #fff; /* Change text color on hover */
+    transition: text-decoration 0.3s ease-in-out;
+}
+
+
+#theme-toggle {
+    background: none;
+    display: flex;
+    justify-content: flex-end;
+    border: 1px solid var(--nav-text-color);
+    color: var(--nav-text-color);
+    padding: 0.5em 1em;
+    cursor: pointer;
+    margin-left: 1em;
+}
+
+#theme-toggle:hover {
+    background-color: var(--nav-text-color);
+    color: var(--nav-background);
+}
+
+/* Style the sections */
+section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    padding: 2em;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: var(--section-background);
+    transition: background-color 0.3s;
+}
+
+.hero {
+    background: var(--section-background);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: background 0.3s, box-shadow 0.3s;
+}
+
+.hero h1 {
+    font-size: 2.5em;
+    margin-bottom: 0.5em;
+}
+
+.hero p {
+    font-size: 1.2em;
+    margin-bottom: 1em;
+}
+
+.hero button {
+    padding: 0.5em 1em;
+    font-size: 1em;
+    color: #fff;
+    background-color: var(--button-background);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.hero button:hover {
+    background-color: var(--button-hover-background);
+}
+
+.about, .skills, .projects, .contact {
+    background: var(--section-background);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: background 0.3s, box-shadow 0.3s;
+    
+}
+
+.about h2, .skills h2, .projects h2, .contact h2 {
+    font-size: 2em;
+    margin-bottom: 1em;
+}
+
+.skills ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap-reverse;
+    column-gap: 20px;
+}
+
+.skills li {
+    flex: 1 1 100px;
+    row-gap: 10px;
+    transition: transform 0.3s;
+    margin: 0.5em; /* Adjust margin to create space */
+    padding: 10px; /* Add padding for additional space */
+    transition: transform 0.3s;
+}
+.skills li:hover {
+    transform: scale(1.1); /* Apply scale transformation on hover */
+}
+
+.contact p {
+    font-size: 1.2em;
+}
+.contact{
+    display: flex;
+}
