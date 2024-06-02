@@ -42,7 +42,8 @@ body.dark-mode {
 /* Style the navigation bar */
 .nav {
     display: flex;
-    justify-content: right;
+    justify-content: space-between;
+    align-items: center;
     position: fixed;
     top: 0;
     left: 0;
@@ -56,35 +57,32 @@ body.dark-mode {
 .nav ul {
     list-style-type: none;
     color: #fff;
-    margin: 0; /* Added to reset default margin */
-    padding: 0; /* Added to reset default padding */
+    margin: 0;
+    padding: 0;
     display: flex;
     justify-content: center;
 }
 
 .nav li {
     color: #fff;
-    margin: 0 0.5em; /* Adjusted to provide space between list items */
+    margin: 0 0.5em;
 }
 
 .nav a {
     color: var(--nav-text-color);
     text-decoration: none;
     font-size: 1.2em;
-    transition: color 0.3s; /* Added transition for color change */
+    transition: color 0.3s;
 }
 
 .nav a:hover {
     text-decoration: underline;
-    color: #fff; /* Change text color on hover */
+    color: #fff;
     transition: text-decoration 0.3s ease-in-out;
 }
 
-
 #theme-toggle {
     background: none;
-    display: flex;
-    justify-content: flex-end;
     border: 1px solid var(--nav-text-color);
     color: var(--nav-text-color);
     padding: 0.5em 1em;
@@ -103,18 +101,21 @@ section {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100vh;
+    min-height: 100vh;
     padding: 2em;
     width: 100%;
+    padding-top: 0%;
     box-sizing: border-box;
     background-color: var(--section-background);
     transition: background-color 0.3s;
+    margin-top: 5vh; /* Added to prevent overlap */
 }
 
 .hero {
     background: var(--section-background);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: background 0.3s, box-shadow 0.3s;
+    margin-bottom: 2em; /* Added margin-bottom */
 }
 
 .hero h1 {
@@ -146,7 +147,8 @@ section {
     background: var(--section-background);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: background 0.3s, box-shadow 0.3s;
-    
+    margin-top: 10vh; /* Added margin-top to separate sections */
+    padding: 2em; /* Added padding for consistent spacing */
 }
 
 .about h2, .skills h2, .projects h2, .contact h2 {
@@ -166,17 +168,251 @@ section {
     flex: 1 1 100px;
     row-gap: 10px;
     transition: transform 0.3s;
-    margin: 0.5em; /* Adjust margin to create space */
-    padding: 10px; /* Add padding for additional space */
-    transition: transform 0.3s;
+    margin: 0.5em;
+    padding: 10px;
 }
+
 .skills li:hover {
-    transform: scale(1.1); /* Apply scale transformation on hover */
+    transform: scale(1.1);
 }
 
 .contact p {
     font-size: 1.2em;
 }
-.contact{
+
+.contact {
     display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Project Card Styles */
+.project-card {
+    width: 300px;
+    height: 400px;
+    background-color: var(--section-background);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 1em;
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.project-image {
+    width: 100%;
+    height: 60%;
+    object-fit: cover;
+    border-bottom: 1px solid #ddd;
+}
+
+.project-content {
+    padding: 1em;
+    text-align: left;
+    width: 100%;
+}
+
+.project-title {
+    font-size: 1.5em;
+    margin-bottom: 0.5em;
+}
+
+.project-description {
+    font-size: 1em;
+    color: var(--text-color);
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav li {
+        margin: 0.5em 0;
+    }
+
+    .nav a {
+        font-size: 1em;
+    }
+
+    section {
+        padding: 1em;
+    }
+
+    .hero h1 {
+        font-size: 2em;
+    }
+
+    .hero p {
+        font-size: 1em;
+    }
+
+    .about h2, .skills h2, .projects h2, .contact h2 {
+        font-size: 1.5em;
+    }
+
+    .skills ul {
+        flex-direction: column;
+    }
+
+    .skills li {
+        flex: 1 1 80px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 1.5em;
+    }
+
+    .hero p {
+        font-size: 0.9em;
+    }
+
+    .hero button {
+        font-size: 0.9em;
+    }
+
+    .about h2, .skills h2, .projects h2, .contact h2 {
+        font-size: 1.2em;
+    }
+}
+
+.myimage {
+    border-radius: 50px;
+    clip-path: circle(55%);
+    width: 160px;
+    height: 180px;
+    object-fit: cover;
+}
+
+.displayed{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.svggen{
+    display: flex;
+    justify-content: space-between;
+}
+
+a {
+    text-decoration: none; 
+    color: var(--nav-text-color);
+    background-color: transparent; 
+}
+
+a:focus {
+    outline: none; 
+    background-color: transparent; 
+}
+
+a:visited {
+    color: var(--nav-text-color); 
+}
+
+a:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+
+/* Keyframe animation for the falling stars */
+@keyframes fallingStar {
+    0% {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(100vh);
+        opacity: 0;
+    }
+}
+
+/* Pseudo-element to generate the stars */
+.falling-star {
+    position: fixed;
+    top: -10%;
+    left: calc(10% + 90% * var(--random));
+    width: 2px; /* Adjust size of the star */
+    height: 2px; /* Adjust size of the star */
+    background-color: #fff; /* Color of the star */
+    box-shadow: 0 0 2px #fff; /* Glow effect for the star */
+    animation: fallingStar var(--duration) linear infinite; /* Apply animation */
+}
+
+/* Adjust the animation duration and delay for each star */
+/* Add more .falling-star classes for more stars */
+.falling-star:nth-child(1) {
+    --random: 0.1; /* Adjust horizontal position */
+    --duration: 2s; /* Adjust duration of animation */
+    animation-delay: 0.5s; /* Adjust delay for animation */
+}
+
+.falling-star:nth-child(2) {
+    --random: 0.3;
+    --duration: 3s;
+    animation-delay: 1s;
+}
+
+.falling-star:nth-child(3) {
+    --random: 0.5;
+    --duration: 2.5s;
+    animation-delay: 1.5s;
+}
+
+/* Add more .falling-star classes for more stars */
+.falling-star:nth-child(4) {
+    --random: 0.7;
+    --duration: 3.2s;
+    animation-delay: 2s;
+}
+
+.falling-star:nth-child(5) {
+    --random: 0.9;
+    --duration: 2.8s;
+    animation-delay: 2.5s;
+}
+
+.falling-star:nth-child(6) {
+    --random: 0.7;
+    --duration: 3.2s;
+    animation-delay: 2s;
+}
+.falling-star:nth-child(7) {
+    --random: 0.7;
+    --duration: 3.2s;
+    animation-delay: 2s;
+}
+.falling-star:nth-child(8) {
+    --random: 0.7;
+    --duration: 3.2s;
+    animation-delay: 2s;
+}
+.falling-star:nth-child(9) {
+    --random: 0.7;
+    --duration: 1.4s;
+    animation-delay: 2s;
+}
+.falling-star:nth-child(10) {
+    --random: 0.7;
+    --duration: 3.2s;
+    animation-delay: 2s;
+}
+.skills{
+    cursor: pointer;
+}
+.projects{
+    cursor: pointer;
 }
