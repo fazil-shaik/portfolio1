@@ -39,8 +39,7 @@ body.dark-mode {
     --section-background: #2c2c2c;
 }
 
-/* Style the navigation bar */
-.nav {
+/* .nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -94,6 +93,107 @@ body.dark-mode {
     background-color: var(--nav-text-color);
     color: var(--nav-background);
 }
+ */
+
+/* General nav styles */
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--nav-background);
+    padding: 1em 0;
+    z-index: 1000;
+    transition: background-color 0.3s;
+}
+
+.nav ul {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav li {
+    margin: 0 0.5em;
+}
+
+.nav a {
+    color: var(--nav-text-color);
+    text-decoration: none;
+    font-size: 1.2em;
+    transition: color 0.3s;
+}
+
+.nav a:hover {
+    text-decoration: underline;
+    color: #fff;
+    transition: text-decoration 0.3s ease-in-out;
+}
+
+#theme-toggle {
+    background: none;
+    border: 1px solid var(--nav-text-color);
+    color: var(--nav-text-color);
+    padding: 0.5em 1em;
+    cursor: pointer;
+    margin-left: 1em;
+}
+
+#theme-toggle:hover {
+    background-color: var(--nav-text-color);
+    color: var(--nav-background);
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .nav {
+        flex-direction: row; /* Ensure nav stays in a row format */
+        flex-wrap: wrap; /* Allow wrapping if needed */
+        padding: 0.5em 0;
+    }
+
+    .nav ul {
+        flex-direction: row; /* Ensure nav items stay in a row */
+        flex-wrap: wrap; /* Allow wrapping if needed */
+        justify-content: center; /* Center items */
+    }
+
+    .nav li {
+        margin: 0.5em; /* Adjust margins for better spacing */
+    }
+
+    .nav a {
+        font-size: 1em; /* Adjust font size for smaller screens */
+    }
+
+    #theme-toggle {
+        margin-left: 0.5em; /* Adjust margin for smaller screens */
+        padding: 0.4em 0.8em; /* Adjust padding for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .nav {
+        padding: 0.5em 0; /* Reduce padding for smaller screens */
+    }
+
+    .nav a {
+        font-size: 0.9em; /* Further adjust font size for smaller screens */
+    }
+
+    #theme-toggle {
+        padding: 0.3em 0.6em; /* Further adjust padding for smaller screens */
+    }
+}
+
+
+
+
 
 /* Style the sections */
 section {
