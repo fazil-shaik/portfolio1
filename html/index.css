@@ -285,6 +285,21 @@ section {
     .about h2, .skills h2, .projects h2, .contact h2 {
         font-size: 1.2em;
     }
+
+    .project-card {
+        width: 100%;
+        height: auto;
+    }
+
+    .skills ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .skills li {
+        flex: 1 1 100%;
+        margin: 0.5em 0;
+    }
 }
 
 .myimage {
@@ -295,14 +310,16 @@ section {
     object-fit: cover;
 }
 
-.displayed{
+.displayed {
     display: flex;
     justify-content: space-evenly;
+    flex-wrap: wrap;
 }
 
-.svggen{
+.svggen {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 a {
@@ -410,9 +427,9 @@ a:hover {
     --duration: 3.2s;
     animation-delay: 2s;
 }
-.skills{
+.skills {
     cursor: pointer;
 }
-.projects{
+.projects {
     cursor: pointer;
 }
