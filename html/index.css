@@ -433,3 +433,43 @@ a:hover {
 .projects {
     cursor: pointer;
 }
+
+
+/* General styles */
+.introduction {
+    padding: 2em;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.introduction h3 {
+    font-size: 1.2em;
+    line-height: 1.5em;
+    margin-bottom: 1em;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .introduction {
+        padding: 1.5em;
+    }
+
+    .introduction h3 {
+        font-size: 1em;
+        line-height: 1.4em;
+    }
+}
+
+@media (max-width: 480px) {
+    .introduction {
+        padding: 1em;
+    }
+
+    .introduction h3 {
+        font-size: 0.9em;
+        line-height: 1.3em;
+        margin-bottom: 0.8em;
+    }
+}
+
