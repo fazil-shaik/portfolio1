@@ -573,3 +573,34 @@ a:hover {
     }
 }
 
+/* Hide the hamburger menu on larger screens */
+.hamburger-menu {
+    display: none;
+}
+
+/* Mobile view adjustments */
+@media (max-width: 768px) {
+    .nav-menu {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: var(--nav-background);
+        z-index: 999;
+    }
+
+    .nav-menu.show {
+        display: flex;
+    }
+
+    .hamburger-menu {
+        display: block;
+        cursor: pointer;
+        font-size: 1.5em;
+        padding: 0.5em;
+        color: var(--nav-text-color);
+    }
+}
+

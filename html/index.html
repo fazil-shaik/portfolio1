@@ -21,15 +21,21 @@
     <div class="falling-star"></div>
     <div class="falling-star"></div>
     <nav class="nav">
-        <ul>
-            <li><a href="#hero">Home</a></li>
+        <div class="nav-left">
+        </div>
+        <ul class="nav-menu">
+            <li><a href="#">Home</a></li>
             <li><a href="#about">About</a></li>
             <li><a href="#skills">Skills</a></li>
             <li><a href="#projects">Projects</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
-        <button id="theme-toggle">switch Mode</button>
+        <div id="theme-toggle">Toggle Theme</div>
+        <div class="hamburger-menu" onclick="toggleMenu()">
+            &#9776; 
+        </div>
     </nav>
+      
     <section id="hero" class="hero">
         <h1>Welcome to my Portfolio!</h1>
         <p>I am fazil a full stack web dev🔥.</p>
@@ -129,7 +135,7 @@ URLs into more manageable links
                 </div>
         </ul>
     </section>     -->
-    <section class="projects">
+    <section class="projects" id="projects">
         <h2>Projects</h2>
         <div class="displayed">
         <div class="project-card">
