@@ -39,62 +39,6 @@ body.dark-mode {
     --section-background: #2c2c2c;
 }
 
-/* .nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background-color: #121111;
-    padding: 1em 0;
-    z-index: 1000;
-    transition: background-color 0.3s;
-}
-
-.nav ul {
-    list-style-type: none;
-    color: #fff;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-}
-
-.nav li {
-    color: #fff;
-    margin: 0 0.5em;
-}
-
-.nav a {
-    color: var(--nav-text-color);
-    text-decoration: none;
-    font-size: 1.2em;
-    transition: color 0.3s;
-}
-
-.nav a:hover {
-    text-decoration: underline;
-    color: #fff;
-    transition: text-decoration 0.3s ease-in-out;
-}
-
-#theme-toggle {
-    background: none;
-    border: 1px solid var(--nav-text-color);
-    color: var(--nav-text-color);
-    padding: 0.5em 1em;
-    cursor: pointer;
-    margin-left: 1em;
-}
-
-#theme-toggle:hover {
-    background-color: var(--nav-text-color);
-    color: var(--nav-background);
-}
- */
-
 /* General nav styles */
 .nav {
     display: flex;
@@ -149,52 +93,94 @@ body.dark-mode {
     color: var(--nav-background);
 }
 
+/* Hamburger menu styles */
+.hamburger-menu {
+    display: none;
+    cursor: pointer;
+    font-size: 1.5em;
+    padding: 0.5em;
+    color: var(--nav-text-color);
+}
+
+.hamburger-menu .bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background-color: var(--nav-text-color);
+}
+
 /* Media Queries for Responsiveness */
 @media (max-width: 768px) {
     .nav {
-        flex-direction: row; /* Ensure nav stays in a row format */
-        flex-wrap: wrap; /* Allow wrapping if needed */
+        flex-wrap: wrap;
         padding: 0.5em 0;
     }
 
+    .nav-menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        background-color: var(--nav-background);
+    }
+
+    .nav-menu.show {
+        display: flex;
+    }
+
     .nav ul {
-        flex-direction: row; /* Ensure nav items stay in a row */
-        flex-wrap: wrap; /* Allow wrapping if needed */
-        justify-content: center; /* Center items */
+        flex-direction: column;
+        width: 100%;
     }
 
     .nav li {
-        margin: 0.5em; /* Adjust margins for better spacing */
+        margin: 0.5em 0;
     }
 
     .nav a {
-        font-size: 1em; /* Adjust font size for smaller screens */
+        font-size: 1em;
     }
 
     #theme-toggle {
-        margin-left: 0.5em; /* Adjust margin for smaller screens */
-        padding: 0.4em 0.8em; /* Adjust padding for smaller screens */
+        margin: 0.5em auto;
+    }
+
+    .hamburger-menu {
+        display: block;
+    }
+
+    /* Hamburger menu animation */
+    .hamburger-menu.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger-menu.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .hamburger-menu.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
     }
 }
 
 @media (max-width: 480px) {
     .nav {
-        padding: 0.5em 0; /* Reduce padding for smaller screens */
+        padding: 0.5em 0;
     }
 
     .nav a {
-        font-size: 0.9em; /* Further adjust font size for smaller screens */
+        font-size: 0.9em;
     }
 
     #theme-toggle {
-        padding: 0.3em 0.6em; /* Further adjust padding for smaller screens */
+        padding: 0.3em 0.6em;
     }
 }
 
-
-
-
-
+/* Rest of the CSS remains unchanged */
 /* Style the sections */
 section {
     display: flex;
@@ -331,19 +317,6 @@ section {
 
 /* Media Queries for Responsiveness */
 @media (max-width: 768px) {
-    .nav ul {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .nav li {
-        margin: 0.5em 0;
-    }
-
-    .nav a {
-        font-size: 1em;
-    }
-
     section {
         padding: 1em;
     }
@@ -572,35 +545,3 @@ a:hover {
         margin-bottom: 0.8em;
     }
 }
-
-/* Hide the hamburger menu on larger screens */
-.hamburger-menu {
-    display: none;
-}
-
-/* Mobile view adjustments */
-@media (max-width: 768px) {
-    .nav-menu {
-        display: none;
-        flex-direction: column;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        background-color: var(--nav-background);
-        z-index: 999;
-    }
-
-    .nav-menu.show {
-        display: flex;
-    }
-
-    .hamburger-menu {
-        display: block;
-        cursor: pointer;
-        font-size: 1.5em;
-        padding: 0.5em;
-        color: var(--nav-text-color);
-    }
-}
-
